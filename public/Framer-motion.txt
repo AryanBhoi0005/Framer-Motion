@@ -1,0 +1,83 @@
+=>If any rendering issue in animation always inspect 
+=>Whenever we install any library like next react or framer gitLibrary is 
+  already installed so while creating repo ignore first 2 commands 
+
+->First Install Framer-motion Library 
+->Choose the div tag in which you want to add 
+  animation effects
+->Add motion.div it works with anything 
+  a , img, div 
+->We have to add animate prop effects which takes in the key value pair or also 
+  a String
+->Add style prop effects and Add transition prop effects speed
+->"tween" effect is just straightforward 
+   no real life physics effect
+->"spring" is a type of animation and with it we can't use duration we use 
+  "stiffness" instead for amount of recoil 
+->"damping" to slow down 
+   stiffness
+->animate,initial,transition 
+  are the 3 main props 
+
+
+*********************************
+Events and Dragging Effects
+->Click or Hover event 
+->Click and hold and drag and move event
+
+->"whileDrag" event is a prop which is already present in framer motion so we 
+   don't have to use css hover effect 
+->"while" prop
+->"drag" event is a prop which helps to drag a component anywhere on screen and 
+   for that effect just add "drag"
+->"x" to only drag in x axis or only in y axis 
+->dragConstraint can take upto 4 values (r,l,t,b) like to prvent drag out of    
+  the screen 
+
+**************************************
+Variants [BOX4]
+-> Other than writing code evrytime we can create a function and call it in form 
+   of variants 
+->Everytime we have to determine a animate and intital state so better than that 
+   we create various variants of something and then call it by their variant name 
+->We can create key value pairs where key is any random name and value is the 
+  styling value 
+
+ ->const Boxvariants is a  list of variant names which are arbitary  
+ ->then call the variant list and animate the respective vaiant
+
+ ->We can create a "delay" event like a async function
+ ->As now we want to animate the child boxes we have to add <motion.li>
+ ->As we add motion to child boxes it also carries the properties metioned in 
+   the parent container or 
+    [variants={boxVariant}
+    animate="visible"
+    initial="hidden]
+->For child use which variant is the child using 
+->The props we have defined in the parent container directly is called by the 
+  children
+->The child is using the properties of parent which is already defined in the 
+  parent container so we only need to call the different variant
+->When we remove delay from children we use "when"
+            when:"beforeChildren"
+  So now it loads after parent 
+-> Staggered children refers to animating multiple child elements in a sequence 
+   with a slight delay between each element's animation.
+
+********************************************
+KeyFrames 
+->[1,2,3,4,5,6,7,8,9,10] values present in array form are 
+   key frames which define the animation frames  
+->Everything depends upon duration of how long do we need 
+  that animation to occur 
+
+*********************************************
+Framer Motion Hook [useAnimation]
+->Using the hook we are calling an Callback function 
+  whcih perform certain animations on basis of props
+->On every button click its starting another animation and
+  ending the other ones
+  ->control is a variable name with 
+    1.control.start to start animation
+    2.control.stop to end animation
+  ->Main task to run animate inside motion hook
